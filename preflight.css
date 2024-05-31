@@ -1,0 +1,144 @@
+/*
+    1.防止填充和边框影响元素宽度；
+    2.删除默认边距、填充；
+    3.重置所有边框；
+*/
+*, ::after, ::before,
+::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    color: inherit;
+    background: inherit;
+}
+
+/*
+    从 Html 继承线高
+*/
+body {
+    line-height: 1;
+}
+
+/*
+    移除标题默认字体大小和权重
+*/
+h1, h2, h3,
+h4, h5, h6,
+p {
+    font-size: inherit;
+    font-weight: inherit;
+    overflow-wrap: break-word;
+}
+
+/*
+    重置 a 标签，优化选择进入 opt-in 而非 opt-out
+*/
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/*
+    默认情况下不带列表样式
+*/
+ol, ul, menu {
+    list-style: none;
+}
+
+/*
+    1.在所有浏览器中继承字体样式；
+    2.移除默认背景色；
+*/
+::file-selector-button, button, input,
+optgroup, select, textarea {
+    appearance: none;
+    border: inherit;
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    background: transparent;
+}
+
+textarea {
+    resize: none;
+}
+
+/*
+    删除 Firefox 的 invalid 样式
+*/
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+
+/*
+    1.防止填充和边框影响元素宽度；
+    2.删除默认边距、填充；
+    3.重置所有边框；
+*/
+img, svg, canvas,
+audio, video, embed,
+iframe, object {
+    display: block;
+    vertical-align: middle;
+}
+
+/*
+    将图像、视频限制在父级宽度内，并保留固有长宽比；
+*/
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+article, aside, details,
+figcaption, figure, footer,
+header, main, menu,
+nav, section {
+    display: block;
+}
+
+/*
+ 1. 确保表格元素的边框样式一致；
+ 2. 移除表格默认的边距和填充；
+*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+/*
+ 1. 确保表单元素的一致性；
+ 2. 移除表单元素的默认样式；
+*/
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+    color: inherit;
+}
+
+/*
+ 确保 iframe 和嵌入对象的宽度和高度一致；
+*/
+iframe, embed, object {
+    border: 0;
+}

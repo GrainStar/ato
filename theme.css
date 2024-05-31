@@ -1,0 +1,333 @@
+/*
+    1.防止填充和边框影响元素宽度；
+    2.删除默认边距、填充；
+    3.重置所有边框；
+*/
+*, ::after, ::before,
+::backdrop, ::file-selector-button {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    color: inherit;
+    background: inherit;
+}
+
+/*
+    从 Html 继承线高
+*/
+body {
+    line-height: 1;
+}
+
+/*
+    移除标题默认字体大小和权重
+*/
+h1, h2, h3,
+h4, h5, h6,
+p {
+    font-size: inherit;
+    font-weight: inherit;
+    overflow-wrap: break-word;
+}
+
+/*
+    重置 a 标签，优化选择进入 opt-in 而非 opt-out
+*/
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+/*
+    默认情况下不带列表样式
+*/
+ol, ul, menu {
+    list-style: none;
+}
+
+/*
+    1.在所有浏览器中继承字体样式；
+    2.移除默认背景色；
+*/
+::file-selector-button, button, input,
+optgroup, select, textarea {
+    appearance: none;
+    border: inherit;
+    font: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    letter-spacing: inherit;
+    color: inherit;
+    background: transparent;
+}
+
+textarea {
+    resize: none;
+}
+
+/*
+    删除 Firefox 的 invalid 样式
+*/
+:-moz-ui-invalid {
+    box-shadow: none;
+}
+
+/*
+    1.防止填充和边框影响元素宽度；
+    2.删除默认边距、填充；
+    3.重置所有边框；
+*/
+img, svg, canvas,
+audio, video, embed,
+iframe, object {
+    display: block;
+    vertical-align: middle;
+}
+
+/*
+    将图像、视频限制在父级宽度内，并保留固有长宽比；
+*/
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+article, aside, details,
+figcaption, figure, footer,
+header, main, menu,
+nav, section {
+    display: block;
+}
+
+/*
+ 1. 确保表格元素的边框样式一致；
+ 2. 移除表格默认的边距和填充；
+*/
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+caption, th, td {
+    text-align: left;
+    font-weight: normal;
+    vertical-align: middle;
+}
+
+/*
+ 1. 确保表单元素的一致性；
+ 2. 移除表单元素的默认样式；
+*/
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+legend {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    white-space: normal;
+    color: inherit;
+}
+
+/*
+ 确保 iframe 和嵌入对象的宽度和高度一致；
+*/
+iframe, embed, object {
+    border: 0;
+}
+
+/*=============================================================*/
+
+:root {
+    /*===  Neutral  ===*/
+    --neutral-g100: #020E1F;
+    --neutral-g90: #182539;
+    --neutral-g80: #2D394B;
+    --neutral-g70: #475263;
+    --neutral-g60: #626C7A;
+    --neutral-g50: #828A97;
+    --neutral-g40: #A2A9B3;
+    --neutral-g30: #C7CCD4;
+    --neutral-g20: #DEE2E8;
+    --neutral-g10: #ECEEF1;
+    --neutral-g5: #F7F8FA;
+    --neutral-g0: #FFFFFF;
+
+    /*===  Neutral Alpha  ===*/
+    --neutral-a50: rgba(2, 9, 20, 0.47);
+    --neutral-a30: rgba(2, 9, 20, 0.19);
+
+    /*===  Information  ===*/
+    --info-f100: #021D66;
+    --info-f90: #052785;
+    --info-f80: #0A33A3;
+    --info-f70: #103FC2;
+    --info-f60: #164DE0;
+    --info-f50: #1F5BFF;
+    --info-f40: #5280FF;
+    --info-f30: #94B1FF;
+    --info-f20: #ADC3FF;
+    --info-f10: #CCDAFF;
+    --info-f5: #E0E9FF;
+    --info-f0: #F0F4FF;
+
+    /*===  Success  ===*/
+    --success-f100: #012911;
+    --success-f90: #03471E;
+    --success-f80: #06662C;
+    --success-f70: #0B853B;
+    --success-f60: #10A34B;
+    --success-f50: #16B857;
+    --success-f40: #41CC79;
+    --success-f30: #75E0A0;
+    --success-f20: #A6F5C6;
+    --success-f10: #CCFFE0;
+    --success-f5: #E0FFED;
+    --success-f0: #EBFFF3;
+
+    /*===  Warning  ===*/
+    --warning-f100: #4D3902;
+    --warning-f90: #6B5105;
+    --warning-f80: #8A6808;
+    --warning-f70: #A87F0D;
+    --warning-f60: #C79814;
+    --warning-f50: #E5B01C;
+    --warning-f40: #F0C54D;
+    --warning-f30: #FADA82;
+    --warning-f20: #FFEAAD;
+    --warning-f10: #FFF2CC;
+    --warning-f5: #FFF7E0;
+    --warning-f0: #FFFAEB;
+
+    /*===  Danger  ===*/
+    --danger-f100: #520C02;
+    --danger-f90: #701304;
+    --danger-f80: #8F1A09;
+    --danger-f70: #AD230E;
+    --danger-f60: #CC2D14;
+    --danger-f50: #E0351B;
+    --danger-f40: #F5654E;
+    --danger-f30: #FF9585;
+    --danger-f20: #FFBCB2;
+    --danger-f10: #FFD3CC;
+    --danger-f5: #FFE4E0;
+    --danger-f0: #FFEDEB;
+
+    /*===  Font Color  ===*/
+    --color-text-strong: var(--neutral-g100);
+    --color-text-sub: var(--neutral-g70);
+    --color-text-soft: var(--neutral-g50);
+    --color-text-disabled: var(--neutral-g30);
+    --color-text-white: var(--neutral-g0);
+    --color-text-info: var(--info-f50);
+    --color-text-success: var(--success-f50);
+    --color-text-warning: var(--warning-f50);
+    --color-text-danger: var(--danger-f50);
+
+    /*===  Icon Color  ===*/
+    --color-icon-strong: var(--color-text-strong);
+    --color-icon-sub: var(--color-text-sub);
+    --color-icon-soft: var(--color-text-soft);
+    --color-icon-disabled: var(--color-text-disabled);
+    --color-icon-white: var(--color-text-white);
+    --color-icon-info: var(--color-text-info);
+    --color-icon-success: var(--color-text-success);
+    --color-icon-warning: var(--color-text-warning);
+    --color-icon-danger: var(--color-text-danger);
+
+    /*===  Border Color  ===*/
+    --color-border-strong: var(--neutral-g100);
+    --color-border-sub: var(--neutral-g30);
+    --color-border-soft: var(--neutral-g10);
+    --color-border-white: var(--neutral-g0);
+    --color-border-info: var(--info-f50);
+    --color-border-success: var(--success-f50);
+    --color-border-warning: var(--warning-f50);
+    --color-border-danger: var(--danger-f50);
+
+    /*===  Overlay State  ===*/
+    --overlay-strong: var(--neutral-a50);
+    --overlay-sub: var(--neutral-a30);
+
+    /*===  background State  ===*/
+
+
+
+    /*===  Dimensions  ===*/
+    --dimension-0: 0rem;
+    --dimension-0_5: 0.031rem;
+    --dimension-1: 0.063rem;
+    --dimension-1_5: 0.094rem;
+    --dimension-2: 0.125rem;
+    --dimension-4: 0.25rem;
+    --dimension-6: 0.375rem;
+    --dimension-8: 0.5rem;
+    --dimension-10: 0.625rem;
+    --dimension-12: 0.75rem;
+    --dimension-16: 1rem;
+    --dimension-20: 1.25rem;
+    --dimension-24: 1.5rem;
+    --dimension-32: 2rem;
+    --dimension-40: 2.5rem;
+    --dimension-48: 3rem;
+    --dimension-56: 3.5rem;
+    --dimension-64: 4rem;
+    --dimension-80: 5rem;
+    --dimension-96: 6rem;
+    --dimension-128: 8rem;
+    --dimension-full: 100%;
+
+    /*===  Border  ===*/
+    --border-xs: var(--dimension-0_5);
+    --border-sm: var(--dimension-1);
+    --border-me: var(--dimension-1_5);
+    --border-lg: var(--dimension-2);
+
+    /*===  Radius  ===*/
+    --radius-xs: var(--dimension-2);
+    --radius-sm: var(--dimension-4);
+    --radius-me: var(--dimension-6);
+    --radius-lg: var(--dimension-8);
+    --radius-xl: var(--dimension-12);
+    --radius-full: var(--dimension-full);
+
+    /*===  Padding  ===*/
+    --padding-xs: var(--dimension-2);
+    --padding-sm: var(--dimension-4);
+    --padding-me: var(--dimension-6);
+    --padding-lg: var(--dimension-8);
+    --padding-xl: var(--dimension-10);
+    --padding-2xl: var(--dimension-12);
+    --padding-3xl: var(--dimension-16);
+    --padding-4xl: var(--dimension-20);
+    --padding-5xl: var(--dimension-24);
+    --padding-6xl: var(--dimension-32);
+    --padding-7xl: var(--dimension-40);
+    --padding-8xl: var(--dimension-48);
+    --padding-9xl: var(--dimension-56);
+    --padding-10xl: var(--dimension-64);
+
+    /*===  Gap  ===*/
+    --gap-xs: var(--dimension-2);
+    --gap-sm: var(--dimension-4);
+    --gap-me: var(--dimension-6);
+    --gap-lg: var(--dimension-8);
+    --gap-xl: var(--dimension-10);
+    --gap-2xl: var(--dimension-12);
+    --gap-3xl: var(--dimension-16);
+    --gap-4xl: var(--dimension-20);
+    --gap-5xl: var(--dimension-24);
+    --gap-6xl: var(--dimension-32);
+    --gap-7xl: var(--dimension-40);
+    --gap-8xl: var(--dimension-48);
+    --gap-9xl: var(--dimension-56);
+    --gap-10xl: var(--dimension-64);
+
+}
