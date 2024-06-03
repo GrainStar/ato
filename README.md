@@ -1,2 +1,2 @@
-# avior-ato
+# ato
 ATO Design System Token
